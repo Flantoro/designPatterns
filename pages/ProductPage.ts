@@ -12,5 +12,6 @@ export class ProductPage{
     async verifyProductNameVisibilityOnProductPage(productInfo: ProductInfoDto){
         this.productName = this.page.getByText(`${productInfo.getName()}`);
         await expect(this.productName).toBeVisible();
+        return this;
     }
 }

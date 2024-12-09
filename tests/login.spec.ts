@@ -7,6 +7,7 @@ test.beforeEach(async ({ page }) => {
 test.describe("Login", async () => {
   test("Login as valid user", async ({page, loginPage, mainPage}) => {
     await test.step(`Login with standart user credentials`, async () => {
+      await loginPage.isLoaded();
       await loginPage.loginAsStandartUser();
 		});
     await test.step(`Assertions`, async () => {
